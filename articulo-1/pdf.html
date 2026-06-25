@@ -4,103 +4,54 @@
     <meta charset="UTF-8">
     <title>Vista PDF</title>
     <style>
-        body { margin: 0; padding: 20px 0; background: #525659; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        img { width: 90%; max-width: 800px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: block; }
-    </style>
-</head>
-<body>
-    <img src="pagina1.png" alt="Página 1">
-    <img src="pagina2.png" alt="Página 2">
-    <img src="pagina3.png" alt="Página 3">
-</body>
-</html>
-3. Código Corregido para el Visor Dual (visor.html en la raíz)
-Reemplace por completo el código de su archivo visor.html actual por este. Este script detecta el movimiento directamente dentro de las ventanas de los iframes y calcula la equivalencia exacta del scroll por porcentaje.
-
-HTML
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visor Comparativo Sincronizado</title>
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: sans-serif; }
-        .header-bar { height: 40px; background: #522615; color: white; display: flex; align-items: center; padding: 0 20px; justify-content: space-between; }
-        .header-bar a { color: white; text-decoration: none; font-weight: bold; }
-        .contenedor-principal { display: flex; height: calc(100% - 40px); width: 100%; }
-        .panel { width: 50%; height: 100%; position: relative; }
-        .panel-izquierdo { border-right: 2px solid #ccc; }
-        iframe { width: 100%; height: 100%; border: none; }
-    </style>
-</head>
-<body>
-
-    <div class="header-bar">
-        <a href="index.html">← Volver a la Portada</a>
-        <span>Control de Calidad: Versión HTML5 (Izquierda) vs PDF Original (Derecha)</span>
-        <div></div>
-    </div>
-
-    <div class="contenedor-principal">
-        <div class="panel panel-izquierdo">
-            <iframe id="iframeHTML"></iframe>
-        </div>
-
-        <div class="panel">
-            <iframe id="iframePDF"></iframe>
-        </div>
-    </div>
-
-    <script>
-        // 1. Capturar el artículo desde la URL
-        const params = new URLSearchParams(window.location.search);
-        const articuloId = params.get('art') || 'articulo-1';
-
-        const iframeHTML = document.getElementById('iframeHTML');
-        const iframePDF = document.getElementById('iframePDF');
-
-        // 2. Asignar rutas dinámicas (ahora el derecho apunta a pdf.html)
-        iframeHTML.src = `${articuloId}/articulo.html`;
-        iframePDF.src = `${articuloId}/pdf.html`;
-
-        let scrollActivo = null;
-
-        // 3. Función de sincronización basada en el scroll interno del iframe
-        function vincularScroll(origenId, destinoId) {
-            const winOrigen = document.getElementById(origenId).contentWindow;
-            const winDestino = document.getElementById(destinoId).contentWindow;
-
-            if (!winOrigen || !winDestino) return;
-
-            winOrigen.addEventListener('scroll', () => {
-                if (scrollActivo !== origenId) return;
-
-                const docOrigen = winOrigen.document.documentElement;
-                const docDestino = winDestino.document.documentElement;
-
-                // Calcular porcentaje de scroll en el origen
-                const maxOrigen = docOrigen.scrollHeight - winOrigen.innerHeight;
-                if (maxOrigen <= 0) return;
-                const porcentaje = winOrigen.pageYOffset / maxOrigen;
-
-                // Aplicar el mismo porcentaje en el destino
-                const maxDestino = docDestino.scrollHeight - winDestino.innerHeight;
-                winDestino.scrollTo(0, porcentaje * maxDestino);
-            });
+        /* Reseteo del navegador y activación forzada de scroll */
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #525659;
+            overflow-y: auto; 
+        }
+        
+        /* Contenedor flexible para apilar las páginas */
+        .contenedor-paginas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 0;
         }
 
-        // Configurar los escuchadores una vez que los iframes terminen de cargar
-        iframeHTML.onload = () => {
-            vincularScroll('iframeHTML', 'iframePDF');
-            iframeHTML.contentWindow.document.body.addEventListener('mouseenter', () => scrollActivo = 'iframeHTML');
-        };
-
-        iframePDF.onload = () => {
-            vincularScroll('iframePDF', 'iframeHTML');
-            iframePDF.contentWindow.document.body.addEventListener('mouseenter', () => scrollActivo = 'iframePDF');
-        };
-    </script>
-
+        /* Regla de ajuste para las imágenes */
+        img {
+            width: 95%; /* Obliga a la imagen a encajar en la pantalla */
+            max-width: 600px; /* Límite máximo para que no se vea borrosa en monitores grandes */
+            height: auto; /* Mantiene la proporción original sin distorsión */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-paginas">
+        <img src="pagina1.png" alt="Página 1">
+		<img src="pagina2.png" alt="Página 2">
+		<img src="pagina3.png" alt="Página 3">
+		<img src="pagina4.png" alt="Página 4">
+		<img src="pagina5.png" alt="Página 5">
+		<img src="pagina6.png" alt="Página 6">
+		<img src="pagina7.png" alt="Página 7">
+		<img src="pagina8.png" alt="Página 8">
+		<img src="pagina9.png" alt="Página 9">
+		<img src="pagina10.png" alt="Página 10">
+		<img src="pagina11.png" alt="Página 11">
+		<img src="pagina12.png" alt="Página 12">
+		<img src="pagina13.png" alt="Página 13">
+		<img src="pagina14.png" alt="Página 14">
+		<img src="pagina15.png" alt="Página 15">
+		<img src="pagina16.png" alt="Página 16">
+		<img src="pagina17.png" alt="Página 17">
+		<img src="pagina18.png" alt="Página 18">
+        </div>
 </body>
 </html>
+    
