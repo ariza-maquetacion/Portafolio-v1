@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Vista PDF</title>
+    <style>
+        body { margin: 0; padding: 20px 0; background: #525659; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        img { width: 90%; max-width: 800px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: block; }
+    </style>
+</head>
+<body>
+    <img src="pagina1.png" alt="Página 1">
+    <img src="pagina2.png" alt="Página 2">
+    <img src="pagina3.png" alt="Página 3">
+</body>
+</html>
+3. Código Corregido para el Visor Dual (visor.html en la raíz)
+Reemplace por completo el código de su archivo visor.html actual por este. Este script detecta el movimiento directamente dentro de las ventanas de los iframes y calcula la equivalencia exacta del scroll por porcentaje.
+
+HTML
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor Comparativo Sincronizado</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: sans-serif; }
+        .header-bar { height: 40px; background: #522615; color: white; display: flex; align-items: center; padding: 0 20px; justify-content: space-between; }
+        .header-bar a { color: white; text-decoration: none; font-weight: bold; }
+        .contenedor-principal { display: flex; height: calc(100% - 40px); width: 100%; }
+        .panel { width: 50%; height: 100%; position: relative; }
+        .panel-izquierdo { border-right: 2px solid #ccc; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">
+        <a href="index.html">← Volver a la Portada</a>
+        <span>Control de Calidad: Versión HTML5 (Izquierda) vs PDF Original (Derecha)</span>
+        <div></div>
+    </div>
+
+    <div class="contenedor-principal">
+        <div class="panel panel-izquierdo">
+            <iframe id="iframeHTML"></iframe>
+        </div>
+
+        <div class="panel">
+            <iframe id="iframePDF"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // 1. Capturar el artículo desde la URL
+        const params = new URLSearchParams(window.location.search);
+        const articuloId = params.get('art') || 'articulo-1';
+
+        const iframeHTML = document.getElementById('iframeHTML');
+        const iframePDF = document.getElementById('iframePDF');
+
+        // 2. Asignar rutas dinámicas (ahora el derecho apunta a pdf.html)
+        iframeHTML.src = `${articuloId}/articulo.html`;
+        iframePDF.src = `${articuloId}/pdf.html`;
+
+        let scrollActivo = null;
+
+        // 3. Función de sincronización basada en el scroll interno del iframe
+        function vincularScroll(origenId, destinoId) {
+            const winOrigen = document.getElementById(origenId).contentWindow;
+            const winDestino = document.getElementById(destinoId).contentWindow;
+
+            if (!winOrigen || !winDestino) return;
+
+            winOrigen.addEventListener('scroll', () => {
+                if (scrollActivo !== origenId) return;
+
+                const docOrigen = winOrigen.document.documentElement;
+                const docDestino = winDestino.document.documentElement;
+
+                // Calcular porcentaje de scroll en el origen
+                const maxOrigen = docOrigen.scrollHeight - winOrigen.innerHeight;
+                if (maxOrigen <= 0) return;
+                const porcentaje = winOrigen.pageYOffset / maxOrigen;
+
+                // Aplicar el mismo porcentaje en el destino
+                const maxDestino = docDestino.scrollHeight - winDestino.innerHeight;
+                winDestino.scrollTo(0, porcentaje * maxDestino);
+            });
+        }
+
+        // Configurar los escuchadores una vez que los iframes terminen de cargar
+        iframeHTML.onload = () => {
+            vincularScroll('iframeHTML', 'iframePDF');
+            iframeHTML.contentWindow.document.body.addEventListener('mouseenter', () => scrollActivo = 'iframeHTML');
+        };
+
+        iframePDF.onload = () => {
+            vincularScroll('iframePDF', 'iframeHTML');
+            iframePDF.contentWindow.document.body.addEventListener('mouseenter', () => scrollActivo = 'iframePDF');
+        };
+    </script>
+
+</body>
+</html>
