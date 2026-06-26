@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<title>07_67347__RC_67_(3)Female</title>
@@ -7,12 +7,20 @@
 		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;600&display=swap" rel="stylesheet"> <!--fuente Roboto-->
 		
 		<style type="text/css">
-			body {
-				margin: 80px;
+			body {			
                 font-family: "Times New Roman", Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "serif";
                 text-align: justify;}
-			h1 {color: #243c6a;}
-			h2 {color: #243c6a; font-style: italic;}
+			/*h1 {color: #243c6a;}*/
+			h3 {color: #145b6a; 
+				margin-top: 6px;
+				margin-bottom: -7px;
+				font-family: 'Roboto Condensed', sans-serif;
+				text-align: left;
+				font-size: 1.3rem;
+				font-weight: 600;
+				line-height: 1;
+				letter-spacing: -0.5px;
+				}
 			
 			:root {
 				
@@ -62,80 +70,237 @@
 			.Indentado { margin-left: 20pt;  }
 			.Nota-pie {margin-left: 12px; text-indent: -12px;}
 
+/* =========================================
+   MAQUETACIÓN PRELIMINARES (GRID 2 COLUMNAS)
+   ========================================= */
+			.preliminares-grid {
+				display: grid;
+				grid-template-columns: 40% 1fr; /* Izquierda 40%, Derecha el resto */
+				gap: 30px; /* Separación (gutter) entre columnas */
+				margin-bottom: 120px;
+				align-items: stretch;
+			}
+
+			/* --- Columna Izquierda --- */
+			.columna-izquierda {
+				border-right: 2.5px solid #27a301; /* Línea verde central */
+				padding-right: 30px;
+				font-family: 'Roboto', sans-serif; /* Según la imagen, usa fuente palo seco */
+				text-align: left;
+			}
+
+			.titulo-traducido {
+				color: #013655;
+				font-family: 'Roboto Condensed', sans-serif; /* Según la imagen, usa fuente palo seco */
+				font-weight: bold;
+				font-style: italic;
+				font-size: 0.9rem;
+				position: relative;				
+				padding-left: 15px;
+				margin-top: 6px;
+				margin-bottom: 15px;
+			}
+
+			/* El cuadrado azul al lado de los títulos */
+			.titulo-traducido::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 4px;
+				width: 8px;
+				height: 16px;
+				background-color: #013655;
+			}
+
+			.bloque-fechas {
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #000;
+				padding: 4px 0;
+				margin: 20px 0;
+				font-size: 0.65em;
+			}
+
+			.bloque-fechas p {
+				margin: 2px 0;
+			}
+
+			.caja-citacion {
+				background-color: #f4f4f4;
+				padding: 7px;
+				font-size: 0.65em;
+				margin-bottom: 20px;
+				text-align: justify;
+			}
+
+			.perfil-autor {
+				font-size: 0.7em;
+				margin-bottom: 15px;
+				line-height: 1.4;
+				
+				font-family: 'Roboto Light', sans-serif;
+			}
+
+	/* Bloque de Licencia Creative Commons */
+			.licencia-cc {
+				display: flex;
+				flex-direction: column; /* Cambia el eje de alineación a vertical */
+				align-items: flex-start; /* Alinea tanto la imagen como el texto al margen izquierdo */
+				gap: 8px; /* Define la distancia vertical exacta entre el logo y el primer renglón */
+				margin-top: 40px; 
+			}
+
+			.licencia-cc img {
+				width: 88px; /* Ancho estándar del botón CC */
+				height: 31px;
+				flex-shrink: 0; /* Impide que la imagen se comprima si el texto es largo */
+			}
+
+			.licencia-cc p {
+				margin: 0;				 
+				font-size: 11px; 
+				line-height: 1.15; 
+				color: #000; 
+				font-family: 'Roboto Light', sans-serif;
+}
+
+			/* --- COLUMNA DERECHA --- */			
+			.columna-derecha h3.subtitulo-gris {
+				color: #949495;
+				font-style: italic;
+				margin-top: 30px;
+				font-size: 1.1rem;
+				line-height: 0.0;
+				letter-spacing: -0.1px;
+			}
+
+			.columna-derecha p {
+				margin-bottom: 20px;
+			}
+
+			/* --- Adaptación a Teléfonos (Responsivo) --- */
+			@media (max-width: 768px) {
+				.preliminares-grid {
+					grid-template-columns: 1fr; /* Cambia a 1 sola columna */
+				}
+				.columna-izquierda {
+					border-right: none;
+					border-bottom: 4px solid #b6d600; /* La línea pasa a ser horizontal */
+					padding-right: 0;
+					padding-bottom: 20px;
+				}
+			}
+			 
+			/* Regla de márgenes híbridos para el documento general */			
+			.contenedor-articulo {
+				width: 80%; 
+				max-width: 1500px; 
+				margin: 0 auto; 
+				padding: 10px;
+			}
+
+			/* Regla de contingencia para referencias y URLs extensas */
+			.url-responsiva {
+				overflow-wrap: anywhere;
+				word-break: break-all;
+				max-width: 100%;
+				display: inline-block;
+			}
+
         </style>
 	</head>
 	
-	<body id="x07_67347__RC_67_(3)Female">
-		<div id="_idContainer000" class="Basic-Text-Frame">
+	<body>
+	<div class="contenedor-articulo">		
 			
 		<div class="titulo-con-barra">
 			<div class="barra"></div>
 			<div class="titulo">
-				Female human capital in intelligence:
-			<span>women in Colombia’s military intelligence</span>
-			
+					Femminas human capital in intelligence:
+				<span>women in Colombia’s military intelligence</span>
 			</div>
 		</div>
+		
+
+		<div class="preliminares-grid"> 
+
+		<div class="columna-izquierda">			
+			<div class="titulo-traducido">
+				Capital humano femenino en inteligencia: las mujeres en la inteligencia militar colombiana
+			</div>
+
+			<div class="titulo-traducido">
+				Capital humano feminino na inteligência: mulheres na inteligência militar colombiana
+			</div>
 			
-			<h2>Capital humano femenino en inteligencia: las mujeres en la inteligencia militar colombiana</h2>
-			<h2>Capital humano feminino na inteligência: mulheres na inteligência militar colombiana</h2>
-            
-			<ul>
-				<li class="Inicio_Fechas-2">Date of receipt: 2025/06/05</li>
-				<li class="Inicio_Fechas-2">Evaluation date: 2025/08/29</li>
-				<li class="Inicio_Fechas-2">Date of approval: 2025/09/03</li>
-			</ul>
-			<p><b>To reference this article / Para citar este artículo / Para citar este artigo:</b> Pirateque Perdomo, P., Ramírez Muñoz, A. G., & Ulloa Sánchez, K. S. (2025). Female human capital in intelligence: women in Colombia’s military intelligence. <i>Revista Criminalidad, 67</i>(3), 115-132. 
-				<a href="https://doi.org/10.47741/17943108.693" target="_blank"> <span>https://doi.org/10.47741/17943108.693</span></a>.</p>
+			<div class="bloque-fechas">
+				<p>• Date of receipt: 2025/06/05</p>
+				<p>• Evaluation date: 2025/08/29</p>
+				<p>• Date of approval: 2025/09/03</p>
+			</div>
 
-			<p><b>Pamela Pirateque Perdomo</b> <!--AUTORES-->	
-			<br>Magíster en Inteligencia Estratégica
-			<br>Escuela de Inteligencia y Contrainteligencia
-			<br>“BG. Ricardo Charry Solano” (ESICI)
-			<br>Bogotá, Colombia
-			<br><a href="mailto:pamela.pirateque@esici.edu.co">pamela.pirateque@esici.edu.co</a>
-			<br><a href="https://orcid.org/0000-0002-5993-3484"target="_blank">
-            <span>https://orcid.org/0000-0002-5993-3484</span></a></p>
+			<div class="caja-citacion">
+				<strong>To reference this article / Para citar este artículo / Para citar este artigo:</strong> Pirateque Perdomo, P., Ramírez Muñoz, A. G., & Ulloa Sánchez, K. S. (2025). Female human capital in intelligence: women in Colombia’s military intelligence. <em>Revista Criminalidad, 67</em>(3), 115-132. 
+				<a href="https://doi.org/10.47741/17943108.730" target="_blank" class="url-responsiva">https://doi.org/10.47741/17943108.730</a>
+			</div>
 
-			<p><b>Angela Gabriela Ramírez Muñoz</b>
-			<br>Magíster en Conflicto, Memoria y Paz
-			<br>Escuela de Inteligencia y Contrainteligencia
-			<br>“BG. Ricardo Charry Solano” (ESICI)
-			<br>Bogotá, Colombia
-			<br><a href="mailto:angela.ramirez@esici.edu.co">angela.ramirez@esici.edu.co</a>
-			<br><a href="https://orcid.org/0009-0009-2351-6150"target="_blank">
-            <span>https://orcid.org/0009-0009-2351-6150</span></a></p>
+			<div class="perfil-autor">
+				<strong>Pamela Pirateque Perdomo</strong>
+				<br>Magíster en Inteligencia Estratégica
+				<br>Escuela de Inteligencia y Contrainteligencia
+				<br>“BG. Ricardo Charry Solano” (ESICI)
+				<br>Bogotá, Colombia
+				<br><a href="mailto:pamela.pirateque@esici.edu.co">pamela.pirateque@esici.edu.co</a>
+				<br><a href="https://orcid.org/0000-0002-5993-3484" target="_blank" class="url-responsiva">https://orcid.org/0000-0002-5993-3484</a>
+<br><br>
+				<strong>Angela Gabriela Ramírez Muñoz</strong>
+				<br>Magíster en Conflicto, Memoria y Paz
+				<br>Escuela de Inteligencia y Contrainteligencia
+				<br>“BG. Ricardo Charry Solano” (ESICI)
+				<br>Bogotá, Colombia
+				<br><a href="mailto:angela.ramirez@esici.edu.co">angela.ramirez@esici.edu.co</a>
+				<br><a href="https://orcid.org/0009-0009-2351-6150" target="_blank" class="url-responsiva">https://orcid.org/0009-0009-2351-6150</a>
+<br><br>
+				<strong>Kelly Stefania Ulloa Sánchez</strong>
+				<br>Profesional en Relaciones Internacionales y Estudios Políticos
+				<br>Escuela de Inteligencia y Contrainteligencia
+				<br>“BG. Ricardo Charry Solano” (ESICI)
+				<br>Bogotá, Colombia
+				<br><a href="mailto:kellysulloas@gmail.com">kellysulloas@gmail.com</a>
+				<br><a href="https://orcid.org/0000-0002-3119-5870" target="_blank" class="url-responsiva">https://orcid.org/0000-0002-3119-5870</a>
+			</div>
+			<!-- Bloque de Licencia CREATIVE COMMONS -->
+			<div class="licencia-cc">
+            <img src="creative_commons.svg" alt="Licencia CC BY-NC-ND 4.0">
+            <p>Esta obra está bajo licencia CC BY-NC-ND 4.0©
+				<br>por <span style="color: #016107;">Policía Nacional de Colombia</span></p>
+        	</div>			
+		</div>		
 
-			<p><b>Kelly Stefania Ulloa Sánchez</b> <!--AUTORES-->	
-			<br>Profesional en Relaciones Internacionales
-			<br>y Estudios Políticos
-			<br>Escuela de Inteligencia y Contrainteligencia
-			<br>“BG. Ricardo Charry Solano” (ESICI)
-			<br>Bogotá, Colombia
-			<br><a href="mailto:kellysulloas@gmail.com">kellysulloas@gmail.com</a>
-			<br><a href="https://orcid.org/0000-0002-3119-5870"target="_blank">
-            <span>https://orcid.org/0000-0002-3119-5870</span></a></p>
-           				
-	<hr>    
-	<h3>Abstract</h3>
-        <p>Gender-based stereotypes in security and defence have limited women’s role in intelligence. Despite that, women’s capital has developed based on their cognitive and socio-emotional skills, that contribute to the understanding of securitisation and decision-making in highly uncertain scenarios. This paper uses grounded theory design under a qualitative methodology to demonstrate the human capital of military women in Colombia through a literature review on women’s role in intelligence and human capital usage, supported by eight semistructured interviews with Colombian military women and intelligence agents. Thus, this article is a theorical contribution to gender studies in the security, defence and intelligence fields, supported by innovative knowledge on the matter taking into consideration the Colombian case. The study yields four conclusions: women’s participation in security is influenced by masculinised socio-cultural contexts that reaffirm gender stereotypes; female human capital represents a valuable asset for intelligence activities and political-military decision-making; military women face a double demand to perform their work activities while preserving their feminine role; establishing spaces that do not restrict women’s recognition and promotion in Colombian intelligence remains an ongoing challenge.</p>
-		<p><b>Keywords </b>
-<br>	Intelligence; women; human capital; skills; army and security</p>
+		<div class="columna-derecha">
+			
+		<h3>Abstract</h3>
+			<p>Gender-based stereotypes in security and defence have limited women’s role in intelligence. Despite that, women’s capital has developed based on their cognitive and socio-emotional skills, that contribute to the understanding of securitisation and decision-making in highly uncertain scenarios. This paper uses grounded theory design under a qualitative methodology to demonstrate the human capital of military women in Colombia through a literature review on women’s role in intelligence and human capital usage, supported by eight semistructured interviews with Colombian military women and intelligence agents. Thus, this article is a theorical contribution to gender studies in the security, defence and intelligence fields, supported by innovative knowledge on the matter taking into consideration the Colombian case. The study yields four conclusions: women’s participation in security is influenced by masculinised socio-cultural contexts that reaffirm gender stereotypes; female human capital represents a valuable asset for intelligence activities and political-military decision-making; military women face a double demand to perform their work activities while preserving their feminine role; establishing spaces that do not restrict women’s recognition and promotion in Colombian intelligence remains an ongoing challenge.</p>
+			
+		<h3 class="subtitulo-gris">Keywords</h3>
+			<p>Intelligence; women; human capital; skills; army and security</p>
 
-	<h3 lang="es-CO">Resumen</h3>
+		<h3>Resumen</h3>
 			<p lang="es-CO">Los estereotipos basados en género en la seguridad y defensa limitan el rol de las mujeres en la Inteligencia. Sin embargo, el capital humano femenino se ha desarrollado basándose en las habilidades cognitivas y socioemocionales que contribuyen al entendimiento de la securitización y la toma de decisiones en escenarios de alta incertidumbre. Este artículo usa la teoría fundamentada bajo una metodología cualitativa con el fin de demostrar el capital humano de las militares colombianas, explicado mediante una revisión de literatura y apoyado por ocho entrevistas semiestructuradas con militares y agentes de Inteligencia colombianas. De esa manera, el presente artículo se establece como una contribución teórica a los estudios de género en los campos de seguridad, defensa e inteligencia, que aporta a la generación de conocimiento tomando como base el caso colombiano. Se encuentran cuatro conclusiones: a) la participación de las mujeres en seguridad es influenciada por contextos socioculturales masculinizados que reafirman estereotipos de género; b) el capital humano femenino representa un activo valioso para las actividades de Inteligencia y la toma de decisiones políticomilitar; c) las mujeres militares enfrentan una doble demanda por hacer sus trabajos mientras preservan su rol de feminidad y d) todavía es un desafío establecer espacios que no restrinjan el reconocimiento y promoción de las mujeres en la Inteligencia colombiana.</p>
-			<p><b>Palabras clave: </b>
-	<br>	Inteligencia; mujeres; capital humano; habilidades; ejército y seguridad</p>
+			
+		<h3 class="subtitulo-gris">Palabras clave</h3>
+			<p>Inteligencia; mujeres; capital humano; habilidades; ejército y seguridad</p>
 
-	<h3 lang="br">Resumo</h3>
-        <p>Os estereótipos de gênero em segurança e defesa limitaram o papel das mulheres na inteligência. Apesar disso, o capital das mulheres se desenvolveu com base em suas habilidades cognitivas e socioemocionais, que contribuem para a compreensão da securitização e da tomada de decisões em cenários de alta incerteza. Este artigo utiliza um projeto de metodologia da teoria fundamentada em uma metodologia qualitativa para demonstrar o capital humano das mulheres militares na Colômbia por meio de uma revisão da literatura sobre o papel das mulheres na inteligência e sobre o uso do capital humano, com o apoio de oito entrevistas semiestruturadas com mulheres militares colombianas e agentes de inteligência. Assim, este artigo é uma contribuição teórica para os estudos de gênero nas áreas de segurança, defesa e inteligência, apoiada em conhecimentos inovadores sobre o assunto, levando em conta o caso colombiano. O estudo apresenta quatro conclusões: a participação das mulheres na segurança é influenciada por contextos socioculturais masculinizados que reafirmam os estereótipos de gênero; o capital humano feminino representa um ativo valioso para as atividades de inteligência e para a tomada de decisões político-militares; as mulheres militares enfrentam uma dupla demanda para realizar suas atividades de trabalho e, ao mesmo tempo, preservar seu papel de mulher; o estabelecimento de espaços que não restrinjam o reconhecimento e a promoção das mulheres na inteligência colombiana continua sendo um desafio constante.</p>
-		<p><b>Palavras-chave </b>
-<br>	Inteligência; mulheres; capital humano; habilidades; militares e segurança</p>
-	<!--</div>
+		<h3>Resumo</h3>
+        	<p lang="br">Os estereótipos de gênero em segurança e defesa limitaram o papel das mulheres na inteligência. Apesar disso, o capital das mulheres se desenvolveu com base em suas habilidades cognitivas e socioemocionais, que contribuem para a compreensão da securitização e da tomada de decisões em cenários de alta incerteza. Este artigo utiliza um projeto de metodologia da teoria fundamentada em uma metodologia qualitativa para demonstrar o capital humano das mulheres militares na Colômbia por meio de uma revisão da literatura sobre o papel das mulheres na inteligência e sobre o uso do capital humano, com o apoio de oito entrevistas semiestruturadas com mulheres militares colombianas e agentes de inteligência. Assim, este artigo é uma contribuição teórica para os estudos de gênero nas áreas de segurança, defesa e inteligência, apoiada em conhecimentos inovadores sobre o assunto, levando em conta o caso colombiano. O estudo apresenta quatro conclusões: a participação das mulheres na segurança é influenciada por contextos socioculturais masculinizados que reafirmam os estereótipos de gênero; o capital humano feminino representa um ativo valioso para as atividades de inteligência e para a tomada de decisões político-militares; as mulheres militares enfrentam uma dupla demanda para realizar suas atividades de trabalho e, ao mesmo tempo, preservar seu papel de mulher; o estabelecimento de espaços que não restrinjam o reconhecimento e a promoção das mulheres na inteligência colombiana continua sendo um desafio constante.</p>
 
-	<div id="_idContainer001">-->
-	<hr>
-	<h3>Introduction</h3>	
+		<h3 class="subtitulo-gris">Palavras-chave</h3>
+			<p>Inteligência; mulheres; capital humano; habilidades; militares e segurança</p>
+		</div>
+	</div>	
+<hr>
+		<div class="perfil-autor">Rev. Crim. / Volumen 67 – Número 3 – Septiembre-Diciembre 2025 – pp. 115-132 – e-ISSN 2256-5531– Bogotá, D. C., Colombia</div>
+	
+	<h3 style="margin-top: 80px;">Introduction</h3>	
 		<p>Intelligence has been intrinsically present in the consolidation of state power, decision-making processes and the pursuit of security and defence interests. Conceptual proposals on its meaning, scope and necessity emerge, permeating classical and contemporary visions about the discipline. Following historical changes in domestic contexts and the influence of international dynamics, intelligence (both as a concept and field) has been forced to redefine itself, which entails a transformation process in the face of new adversaries and threats on the global stage. This discipline is formalised within state institutions from a realist perspective, where security is a military matter that aims to protect territory and sovereignty (Buzan, 1983). In addition, the changing contexts and disruptive nature of the international system influence the configuration of the security and intelligence binomial, adding a determining factor: the qualification of female human capital in security forces.</p>
 		<p>Although intelligence is defined as a useful tool to mitigate threats, pursue the strategic interests of states, and to assist in the decision-making processes of a state (Warner, 2002), the course of its theorisation has not been studied to such an extent. There is no universally accepted consensus among academics and researchers on doctrinal frameworks, functions, a common language, training processes or the management of women’s human capital in intelligence. Studies on the role of women in intelligence and security have been framed by rigid, masculinised, and exclusionary positions (Pirateque & Chaparro, 2023), given that men are associated with direct contributions to the field, while women are conditioned to indirect intervention because of sociohistorical limitations and restrictions.</p>
 		<p>Martin (2015) points out the conditioned contributions of women to espionage in the United States. She explains that women have contributed to the field through office work as translators, telephone operators, divers, and cryptologists, despite tolerating widespread sexual and racial harassment by their counterparts. Women did not have opportunities to achieve promotions or more prominent positions because of a lack of mentors, harassment, inflexible working conditions, extended hours, and outside responsibilities. Hence, women have been conditioned by restrictions and limitations in intelligence duties.</p>
@@ -152,8 +317,8 @@
 		<p>To generate a conclusive contribution, the collection and interpretation of empirical information were established using categories and characteristics that bear on an understanding of women’s abilities in intelligence, such as inner context (personal motivation for joining the army) and external context (national and societal factors that influence women’s enlistment), cognitive and socio-emotional abilities, and women’s contribution to intelligence based on a comparison of their own experiences, challenges and experiences of changes within the specialisation. The interview information was transcribed and coded through three different processes: open coding, axial coding and selective coding using qualitative software (NVIVO), as shown in Table 1. This made it possible to demonstrate non-linear influences of cognitive and socio-emotional skills on decisionmaking processes, emphasising the unaddressed areas regarding female human capital based on its personal, social, emotional and labour dimensions.</p>
 	<tr>
         <h5 style="font-weight: lighter; font-family: 'Roboto Condensed', sans-serif;">        
-        <strong><b>Table 1. </b></strong>|&nbsp;&nbsp;&nbsp;&nbsp;Coding procedures
-            <p align="left"><td><img src="07_67347__RC_67_(3)Female-Table-1.png" alt="Table-1"width="70%"></td>
+        <strong><b>Table 1. CONTENE </b></strong>|&nbsp;&nbsp;&nbsp;&nbsp;Coding procedures
+            <p align="left"><td><img src="07_67347__RC_67_(3)Female-Table-1.png" alt="Table-1"width="100%"></td>
 			</p>        
         </h5>
     </tr>
@@ -260,131 +425,131 @@
 	
 	<h3>Conflict of interests</h3>
 		<p>There was no conflict of interest among the authors of this academic research. We declare that we have no financial or personal relationship that could influence the interpretation and publication of the results obtained. Likewise, we assure compliance with ethical standards and scientific integrity at all times, in accordance with the guidelines established by the academic community and those stipulated by this journal.</p>
-	</div>
 	
+	<section class="url-responsiva">
 	<h3>References</h3>
 		<p>Acosta, P., Muller, N., & Sarzosa, M. A. (2015). <i>Beyond Qualifications: Returns to Cognitive and Socio- Emotional Skills in Colombia</i> (SSRN Scholarly Paper No. 2667984; Issue 2667984).
-            <a href="https://papers.ssrn.com/abstract=2667984" target="_blank"><span>https://papers.ssrn.com/abstract=2667984</span></a>
+            <a href="https://papers.ssrn.com/abstract=2667984" target="_blank">https://papers.ssrn.com/abstract=2667984</a>
         </p>
 		<p>Andrew, C. (2018). <i>Secret World: A History of Intelligence.</i> Yale University Press.
-            <a href="https://doi.org/10.2307/j.ctv5cg9n4" target="_blank"><span>https://doi.org/10.2307/j.ctv5cg9n4</span></a>
+            <a href="https://doi.org/10.2307/j.ctv5cg9n4" target="_blank">https://doi.org/10.2307/j.ctv5cg9n4</a>
         </p>
 		<p>Asch, B. J., Miller, T., & Weinberger, G. (2016). <i>Can We Explain Gender Differences in Officer Career Progression?</i> RAND Corporation.
-            <a href="https://www.rand.org/pubs/research_reports/RR1288.html" target="_blank"><span>https://www.rand.org/pubs/research_reports/RR1288.html</span></a>
+            <a href="https://www.rand.org/pubs/research_reports/RR1288.html" target="_blank">https://www.rand.org/pubs/research_reports/RR1288.html</a>
         </p>
 		<p>Attanasio, O., Blundell, R., Conti, G., & Mason, G. (2020). Inequality in socio-emotional skills: A cross-cohort comparison. <i>Journal of Public Economics, 191</i>, 104171.
-            <a href="https://doi.org/10.1016/j.jpubeco.2020.104171" target="_blank"><span>https://doi.org/10.1016/j.jpubeco.2020.104171</span></a>
+            <a href="https://doi.org/10.1016/j.jpubeco.2020.104171" target="_blank">https://doi.org/10.1016/j.jpubeco.2020.104171</a>
         </p>
 		<p>Boldry, J., Wood, W., & Kashy, D. A. (2001). Gender Stereotypes and the Evaluation of Men and Women in Military Training. <i>Journal of Social Issues, 57</i>(4), Article 4.
-            <a href="https://doi.org/10.1111/0022-4537.00236" target="_blank"><span>https://doi.org/10.1111/0022-4537.00236</span></a>
+            <a href="https://doi.org/10.1111/0022-4537.00236" target="_blank">https://doi.org/10.1111/0022-4537.00236</a>
         </p>
 		<p>Booth, K., & Wheeler, N. (2009). The Security Dilemma: Fear, Cooperation and Trust in World Politics, Ken Booth and Nicholas J. Wheeler (Basingstoke, UK: Palgrave Macmillan, 2008), 272 pp., 38 paper. <i>Ethics & International Affairs, 23</i>(1), Article 1.
-            <a href="https://doi.org/10.1111/j.1747-7093.2009.195_1.x" target="_blank"><span>https://doi.org/10.1111/j.1747-7093.2009.195_1.x</span></a>
+            <a href="https://doi.org/10.1111/j.1747-7093.2009.195_1.x" target="_blank">https://doi.org/10.1111/j.1747-7093.2009.195_1.x</a>
         </p>
 		<p>Braun, V., & Clarke, V. (2013). <i>Successful qualitative research: A practical guide for beginners</i> (1st edn, Vol. 1–1). SAGE publications Ltd.
         </p>
 		<p>Buzan, B. (1983). People, States and Fear: The National Security Problem in International Relations. By Barry Buzan. (Chapel Hill, N.C.: University of North Carolina Press, 1983. Pp. x + 262. 8.95, paper.). <i>American Political Science Review, 78</i>(3), Article 3.
-            <a href="https://doi.org/10.2307/1961913" target="_blank"><span>https://doi.org/10.2307/1961913</span></a>
+            <a href="https://doi.org/10.2307/1961913" target="_blank">https://doi.org/10.2307/1961913</a>
         </p>
 		<p>Buzan, B., & Wæver, O. (2003). <i>Regions and Powers: The Structure of International Security</i>. Cambridge University Press.
-            <a href="https://doi.org/10.1017/CBO9780511491252" target="_blank"><span>https://doi.org/10.1017/CBO9780511491252</span></a>
+            <a href="https://doi.org/10.1017/CBO9780511491252" target="_blank">https://doi.org/10.1017/CBO9780511491252</a>
         </p>
 		<p>Callum, R. (2001). The Case for Cultural Diversity in the Intelligence Community. <i>International Journal of Intelligence and CounterIntelligence, 14</i>(1), Article 1.
-            <a href="https://doi.org/10.1080/08850600150501317" target="_blank"><span>https://doi.org/10.1080/08850600150501317</span></a>
+            <a href="https://doi.org/10.1080/08850600150501317" target="_blank">https://doi.org/10.1080/08850600150501317</a>
         </p>
 		<p>Cancelado, H. (2022). La inteligencia en América Latina: Entre las posibilidades del futuro y la fuerza del pasado. In <i>América Latina: Ciclos socioeconómicos y políticos, 1990-2020</i>.
-            <a href="https://issuu.com/pujaveriana/docs/america_latina_-_sampler" target="_blank"><span>https://issuu.com/pujaveriana/docs/america_latina_-_sampler</span></a>
+            <a href="https://issuu.com/pujaveriana/docs/america_latina_-_sampler" target="_blank">https://issuu.com/pujaveriana/docs/america_latina_-_sampler</a>
         </p>
 		<p>CIA. (2024, August 15). <i>From Typist to Trailblazer: The Evolving View of Women in the CIA’s Workforce | CIA FOIA (foia.cia.gov)</i>.
-            <a href="https://www.cia.gov/readingroom/collection/typist-trailblazer" target="_blank"><span>https://www.cia.gov/readingroom/collection/typist-trailblazer</span></a>
+            <a href="https://www.cia.gov/readingroom/collection/typist-trailblazer" target="_blank">https://www.cia.gov/readingroom/collection/typist-trailblazer</a>
         </p>
 		<p>Duncanson, C., & Woodward, R. (2016). Regendering the military: Theorizing women’s military participation. <i>Security Dialogue, 47</i>(1), Article 1.
-            <a href="https://doi.org/10.1177/0967010615614137" target="_blank"><span>https://doi.org/10.1177/0967010615614137</span></a>
+            <a href="https://doi.org/10.1177/0967010615614137" target="_blank">https://doi.org/10.1177/0967010615614137</a>
         </p>
 		<p>Dusi, P., Messetti, G., & Steinbach, M. (2014). Skills, Attitudes, Relational Abilities & Reflexivity: Competences for a Multicultural Society. <i>Procedia - Social and Behavioral Sciences, 112</i>, 538–547.
-            <a href="https://doi.org/10.1016/j.sbspro.2014.01.1200" target="_blank"><span>https://doi.org/10.1016/j.sbspro.2014.01.1200</span></a>
+            <a href="https://doi.org/10.1016/j.sbspro.2014.01.1200" target="_blank">https://doi.org/10.1016/j.sbspro.2014.01.1200</a>
         </p>
 		<p>Enloe, C. (2014). <i>Bananas, Beaches and Bases: Making Feminist Sense of International Politics</i> (2nd edn). University of California Press.
-            <a href="https://www.jstor.org/stable/10.1525/j.ctt6wqbn6" target="_blank"><span>https://www.jstor.org/stable/10.1525/j.ctt6wqbn6</span></a>
+            <a href="https://www.jstor.org/stable/10.1525/j.ctt6wqbn6" target="_blank">https://www.jstor.org/stable/10.1525/j.ctt6wqbn6</a>
         </p>
 		<p>Fussell, C., & Lee, D. (2024). <i>Networks at War: Organizational Innovation and Adaptation in the 21st Century</i>.
-            <a href="https://www.academia.edu/28139437/Networks_at_War_Organizational_Innovation_and_Adaptation_in_the_21st_Century" target="_blank"><span>https://www.academia.edu/28139437/Networks_at_War_Organizational_Innovation_and_Adaptation_in_the_21st_Century</span></a>
+            <a href="https://www.academia.edu/28139437/Networks_at_War_Organizational_Innovation_and_Adaptation_in_the_21st_Century" target="_blank">https://www.academia.edu/28139437/Networks_at_War_Organizational_Innovation_and_Adaptation_in_the_21st_Century</a>
         </p>
 		<p>García Sicard, N., & Niño, C. (2023). The Socioemotional Skills of Women for Intelligence Performance in the National Intelligence Directorate in Colombia. <i>International Journal of Intelligence and CounterIntelligence, 36</i>(2), Article 2.
-            <a href="https://doi.org/10.1080/08850607.2022.2065224" target="_blank"><span>https://doi.org/10.1080/08850607.2022.2065224</span></a>
+            <a href="https://doi.org/10.1080/08850607.2022.2065224" target="_blank">https://doi.org/10.1080/08850607.2022.2065224</a>
         </p>
 		<p>Glaser, B., & Strauss, A. (2017). <i>Discovery of Grounded Theory: Strategies for Qualitative Research.</i> Routledge.
-            <a href="https://doi.org/10.4324/9780203793206" target="_blank"><span>https://doi.org/10.4324/9780203793206</span></a>
+            <a href="https://doi.org/10.4324/9780203793206" target="_blank">https://doi.org/10.4324/9780203793206</a>
         </p>
 		<p>Glew, H., Abrams, L., Beattie, C., Sharpe, P., & Summerfield, P. (2016). <i>Gender, rhetoric and regulation: Women’s work in the Civil Service and the London County Council, 1900–55.</i> Manchester University Press.
-            <a href="https://www.jstor.org/stable/j.ctt1b349vc" target="_blank"><span>https://www.jstor.org/stable/j.ctt1b349vc</span></a>
+            <a href="https://www.jstor.org/stable/j.ctt1b349vc" target="_blank">https://www.jstor.org/stable/j.ctt1b349vc</a>
         </p>
 		<p>Heckman, J., & Carneiro, P. (2003). <i>Human Capital Policy</i> (Working Paper No. 9495). National Bureau of Economic Research.
-            <a href="https://doi.org/10.3386/w9495" target="_blank"><span>https://doi.org/10.3386/w9495</span></a>
+            <a href="https://doi.org/10.3386/w9495" target="_blank">https://doi.org/10.3386/w9495</a>
         </p>
 		<p>Hernández-Sampieri, R., & Mendoza Torres, C. P. (2018). Capítulo 14: Elección del diseño o abordaje de investigación en la ruta cualitativa. In R. Hernández- Sampieri (Ed.), <i>Metodología de la investigación: Las rutas cuantitativa, cualitativa y mixta.</i> McGraw Hill Education.
         </p>
 		<p>Hisnanick, J. J. (2003). A Great Place to Start: The Role of Military Service on Human Capital Formation. LABOUR: <i>Review of Labour Economics & Industrial Relations, 17</i>(1), 25–45.
-            <a href="https://doi.org/10.1111/1467-9914.00220" target="_blank"><span>https://doi.org/10.1111/1467-9914.00220</span></a>
+            <a href="https://doi.org/10.1111/1467-9914.00220" target="_blank">https://doi.org/10.1111/1467-9914.00220</a>
         </p>
 		<p>Kent, S. (1966). <i>Strategic Intelligence for American World Policy.</i> Princeton University Press.
-            <a href="https://www.jstor.org/stable/j.ctt183q0qt" target="_blank"><span>https://www.jstor.org/stable/j.ctt183q0qt</span></a>
+            <a href="https://www.jstor.org/stable/j.ctt183q0qt" target="_blank">https://www.jstor.org/stable/j.ctt183q0qt</a>
         </p>
 		<p>Lowenthal, M. M. (2002). <i>Intelligence: From Secrets to Policy.</i>
         </p>
 		<p>Maldonado, C., & Sancho, C. (2024). <i>Cooperación en Inteligencia Estratégica de Defensa en el CDS de UNASUR: Posibilidades, Limitaciones y Desafíos (Ministerio de Defensa de Argentina, 2015)</i>.			
-			<a href="https://www.academia.edu/28365228/Cooperaci%C3%B3n_en_Inteligencia_Estrat%C3%A9gica_de_Defensa_en_	el_CDS_de_UNASUR_Posibilidades_Limitaciones_y_Desaf%C3%ADos_Ministerio_de_Defensa_de_Argentina_2015_" target="_blank"><span>https://www	academia.edu/28365228/Cooperaci%C3%B3n_en_Inteligencia_Estrat%C3%A9gica_de_Defensa_en_	el_CDS_de_UNASUR_Posibilidades_Limitaciones_y_Desaf%C3%ADos_Ministerio_de_Defensa_de_Argentina_2015_</span></a>
+			<a href="https://www.academia.edu/28365228/Cooperaci%C3%B3n_en_Inteligencia_Estrat%C3%A9gica_de_Defensa_en_	el_CDS_de_UNASUR_Posibilidades_Limitaciones_y_Desaf%C3%ADos_Ministerio_de_Defensa_de_Argentina_2015_" target="_blank">https://www	academia.edu/28365228/Cooperaci%C3%B3n_en_Inteligencia_Estrat%C3%A9gica_de_Defensa_en_	el_CDS_de_UNASUR_Posibilidades_Limitaciones_y_Desaf%C3%ADos_Ministerio_de_Defensa_de_Argentina_2015_</a>
         </p>
 		<p>Manjikian, M. B. (2022). Feminist philosophy and the problem of intelligence analysis: Standpoint, measurement, and motivation. <i>Intelligence and National Security.</i>
-            <a href="https://www.tandfonline.com/doi/abs/10.1080/02684527.2022.2076333" target="_blank"><span>https://www.tandfonline.com/doi/abs/10.1080/02684527.2022.2076333</span></a>
+            <a href="https://www.tandfonline.com/doi/abs/10.1080/02684527.2022.2076333" target="_blank">https://www.tandfonline.com/doi/abs/10.1080/02684527.2022.2076333</a>
         </p>
 		<p>Martin, A. J. (2015). America’s Evolution of Women and Their Roles in the Intelligence Community. <i>Journal of Strategic Security, 8</i>(3), Article 3.
         </p>
 		<p>McDowell, D. (2001). <i>Strategic intelligence: A handbook for practitioners, managers and users</i> (2. reprint). Istana Enterprises.
         </p>
 		<p>Medie, P. A., & Kang, A. J. (2018). Power, knowledge and the politics of gender in the Global South. <i>European Journal of Politics and Gender, 1</i>(1–2), 37–54.
-            <a href="https://doi.org/10.1332/251510818X15272520831157" target="_blank"><span>https://doi.org/10.1332/251510818X15272520831157</span></a>
+            <a href="https://doi.org/10.1332/251510818X15272520831157" target="_blank">https://doi.org/10.1332/251510818X15272520831157</a>
         </p>
 		<p>Moore, B. L. (2017). Introduction to Armed Forces & Society: Special Issue on Women in the Military. <i>Armed Forces & Society, 43</i>(2), Article 2.
-            <a href="https://doi.org/10.1177/0095327X17694909" target="_blank"><span>https://doi.org/10.1177/0095327X17694909</span></a>
+            <a href="https://doi.org/10.1177/0095327X17694909" target="_blank">https://doi.org/10.1177/0095327X17694909</a>
         </p>
 		<p>Morrison, J. N. L. (2014). Intelligence in the Cold War. <i>Cold War History, 14</i>(4), Article 4.
-            <a href="https://doi.org/10.1080/14682745.2014.950248" target="_blank"><span>https://doi.org/10.1080/14682745.2014.950248</span></a>
+            <a href="https://doi.org/10.1080/14682745.2014.950248" target="_blank">https://doi.org/10.1080/14682745.2014.950248</a>
         </p>
 		<p>Newbery, S., & Kaunert, C. (2023). Critical Intelligence Studies: A new framework for analysis. <i>Intelligence and National Security, 38</i>(5), 780–798.
-            <a href="https://doi.org/10.1080/02684527.2023.2178163" target="_blank"><span>https://doi.org/10.1080/02684527.2023.2178163</span></a>
+            <a href="https://doi.org/10.1080/02684527.2023.2178163" target="_blank">https://doi.org/10.1080/02684527.2023.2178163</a>
         </p>
 		<p>Pécaut, D. (2003). <i>Violencia y política en Colombia: Elementos de reflexión.</i> Hombre Nuevo Editores ; Univ. del Valle.
         </p>
 		<p>Pirateque, P. (2018). Los Grupos Armados Organizados Residuales: La Amenaza de Los Escenarios Transformados en Colombia. <i>Civilizar, 04</i>(04), Article 04.
         </p>
 		<p>Pirateque, P. (2021). <i>Comunicaciones Estratégicas (STRATCOM) y social media: Su aplicabilidad para el mundo postwesfaliano.</i> Editorial Planeta Colombiana S.A.
-            <a href="https://esici.edu.co/wp-content/uploads/2022/01/4.-Comunicaciones-estrategicasenero-2062.pdf" target="_blank"><span>https://esici.edu.co/wp-content/uploads/2022/01/4.-Comunicaciones-estrategicasenero-2062.pdf</span></a>
+            <a href="https://esici.edu.co/wp-content/uploads/2022/01/4.-Comunicaciones-estrategicasenero-2062.pdf" target="_blank">https://esici.edu.co/wp-content/uploads/2022/01/4.-Comunicaciones-estrategicasenero-2062.pdf</a>
         </p>
 		<p>Pirateque, P., & Chaparro, N. (2023). Cambios generacionales de la mujer en la historia de Colombia y su incidencia en los espacios de Inteligencia Militar. In <i>(Re)pensando la mujer desde su rol en la inteligencia: Un acercamiento a las dinámicas que integran a la mujer en espacios de seguridad y defensa glocales</i> (pp. 297–324). Sello Editorial AQUILA HARPYIA.
-            <a href="https://libros.esici.edu.co/index.php/aqha/catalog/book/6" target="_blank"><span>https://libros.esici.edu.co/index.php/aqha/catalog/book/6</span></a>
+            <a href="https://libros.esici.edu.co/index.php/aqha/catalog/book/6" target="_blank">https://libros.esici.edu.co/index.php/aqha/catalog/book/6</a>
         </p>
 		<p>Pirateque, P., & Ulloa, K. (2020). Exploración de la memoria y escenarios de reparación simbólica desde el caso colombiano. <i>Perspectivas en Inteligencia, 12</i>(21), 129–150.
-            <a href="https://doi.org/10.47961/2145194X.222" target="_blank"><span>https://doi.org/10.47961/2145194X.222</span></a>
+            <a href="https://doi.org/10.47961/2145194X.222" target="_blank">https://doi.org/10.47961/2145194X.222</a>
         </p>
 		<p>Pirateque, P., Ulloa, K., & Ramírez, A. G. (2023a). Caracterización de las mujeres militares en la Inteligencia colombiana: Factores de influencia y habilidades diferenciales. In <i>(Re) Pensando la Mujer desde su rol en la inteligencia: Un acercamiento a las dinámicas que integran a la mujer en espacios de seguridad y defensas glocales.</i> (Vol. 1). Ediciones de la U.
         </p>
 		<p>Pirateque, P., Ulloa, K., & Ramírez, A. G. (2023b). Un camino en construcción: Retos y oportunidades de las mujeres oficiales y suboficiales en la Inteligencia colombiana. In <i>(Re) Pensando la Mujer desde su rol en la inteligencia: Un acercamiento a las dinámicas que integran a la mujer en espacios de seguridad y defensas glocales.</i> (Vol. 1). Ediciones de la U.
         </p>
 		<p>Pirateque Perdomo, P., Ramírez-Muñoz, Á. G., & Sánchez-Adarraga, U. A. (2025). The influence of narratives on women’s participation in security analytical frameworks. <i>Revista Científica General José María Córdova, 23</i>(50), Article 50.
-            <a href="https://doi.org/10.21830/19006586.1381" target="_blank"><span>https://doi.org/10.21830/19006586.1381</span></a>
+            <a href="https://doi.org/10.21830/19006586.1381" target="_blank">https://doi.org/10.21830/19006586.1381</a>
         </p>
 		<p>Proctor, T. (2006). Female Intelligence: Women and Espionage in the First World War. By Tammy Proctor. New York University Press, London, 2003. 205 pp. ISBN 0814766935, £21.50. <i>Twentieth Century British History, 17</i>(1), Article 1.
-            <a href="https://doi.org/10.1093/tcbh/hwi047" target="_blank"><span>https://doi.org/10.1093/tcbh/hwi047</span></a>
+            <a href="https://doi.org/10.1093/tcbh/hwi047" target="_blank">https://doi.org/10.1093/tcbh/hwi047</a>
         </p>
 		<p>Riehle, K. (2021). Major or Minor?: For What Audiences are Intelligence Studies Programs Best Suited. <i>Journal of Strategic Security, 14</i>(1), Article 1.
-            <a href="https://doi.org/10.5038/1944-0472.14.1.1793" target="_blank"><span>https://doi.org/10.5038/1944-0472.14.1.1793</span></a>
+            <a href="https://doi.org/10.5038/1944-0472.14.1.1793" target="_blank">https://doi.org/10.5038/1944-0472.14.1.1793</a>
         </p>
 		<p>Russell, R. L. (Ed.). (2007). Strategic Intelligence and American Statecraft. In <i>Sharpening Strategic Intelligence: Why the CIA Gets It Wrong and What Needs to Be Done to Get It Right</i> (pp. 1–28). Cambridge University Press.
-            <a href="https://doi.org/10.1017/CBO9780511509902.002" target="_blank"><span>https://doi.org/10.1017/CBO9780511509902.002</span></a>
+            <a href="https://doi.org/10.1017/CBO9780511509902.002" target="_blank">https://doi.org/10.1017/CBO9780511509902.002</a>
         </p>
 		<p>Shahan, J. (2021). “Don’t keep mum”: Critical approaches to the narratives of women intelligence professionals. <i>Intelligence and National Security, 36</i>(4), Article 4.
-            <a href="https://doi.org/10.1080/02684527.2021.1893077" target="_blank"><span>https://doi.org/10.1080/02684527.2021.1893077</span></a>
+            <a href="https://doi.org/10.1080/02684527.2021.1893077" target="_blank">https://doi.org/10.1080/02684527.2021.1893077</a>
         </p>
 		<p>Suárez Rodríguez, C. O., Dusú Contreras, R., & Toro Sánchez, M. del. (2007). Las capacidades y las competencias: Su comprensión para la formación del profesional. <i>Acción Pedagógica, 16</i>(1), Article 1.
         </p>
@@ -393,15 +558,14 @@
 		<p>Tzu, S. (2007). <i>The Art Of War.</i> Panamericana.
         </p>
 		<p>Warner, M. (2002). Wanted: A Definition of ‘Intelligence’. <i>Studies in Intelligence, 46</i>(3).
-            <a href="https://www.cia.gov/resources/csi/static/Wanted-Definition-of-Intel.pdf" target="_blank"><span>https://www.cia.gov/resources/csi/static/Wanted-Definition-of-Intel.pdf</span></a>
+            <a href="https://www.cia.gov/resources/csi/static/Wanted-Definition-of-Intel.pdf" target="_blank">https://www.cia.gov/resources/csi/static/Wanted-Definition-of-Intel.pdf</a>
         </p>
 		<p>Yaffe, L. (2011). Conflicto armado en Colombia: Análisis de las causas económicas, sociales e institucionales de la oposición violenta. Revista CS, 8, Article 8.
-            <a href="https://doi.org/10.18046/recs.i8.1133" target="_blank"><span>https://doi.org/10.18046/recs.i8.1133</span></a>
-        </p>
-	</body>
+            <a href="https://doi.org/10.18046/recs.i8.1133" target="_blank">https://doi.org/10.18046/recs.i8.1133</a>
+        </p>	
+	</section>
 
-	<CITAS>
-<br><br><br><br><br><br>
+	<section style="margin-top: 80px;">
 	<hr>
 	<h3>Citas Bibliográficas</h3>
 		<p id="nota1"><a href="#ref1">1</a>&nbsp; The interviewed women are protected by Law 1621 of 2013, which regulates intelligence and counterintelligence activities in Colombia. Therefore, their identity is kept anonymous, guaranteeing the confidentiality of their personal information. The information was collected under ethical procedures, supported by informed consent documentation that was read and signed by the women interviewed.</p>
@@ -424,5 +588,7 @@
 		<p id="nota17"><a href="#ref17">17</a>&nbsp; Interview with woman civil agent #7.</p>
 		<p id="nota18"><a href="#ref18">18</a>&nbsp; Interview with woman civil agent #8.</p>
 
-	</CITAS>
+	</section>
+	</div>
+	</body>
 </html>
